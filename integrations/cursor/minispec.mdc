@@ -1,0 +1,15 @@
+---
+description: MiniSpeckit Spec-Driven Development rules for Cursor AI
+globs: specs/**/*.md
+---
+
+# MiniSpeckit Agent Rules
+
+You are working in a codebase that uses **MiniSpeckit** for Spec-Driven Development.
+
+## Core Rules:
+1. **Spec First**: Always check `specs/` before writing significant code. Each feature has a single blueprint (`specs/NNN-slug.md`).
+2. **Execute Tasks Sequentially**: When implementing a spec, read Section 3 (Implementation Tasks) and complete each task in order.
+3. **Keep State in Sync**: As you complete tasks, mark their checkboxes as completed (`- [x]`) in the spec file.
+4. **Zero Desynchronization**: Do not invent requirements outside the Acceptance Criteria. If a design change is necessary, update the spec document first.
+5. **Verify Before Done**: Always execute the test command specified in Section 4 before declaring a feature complete.

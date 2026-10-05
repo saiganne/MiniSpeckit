@@ -1,0 +1,39 @@
+{
+  "name": "minispeckit",
+  "version": "1.0.0",
+  "description": "A lightweight, token-efficient, zero-dependency Spec-Driven Development (SDD) toolkit for AI coding agents.",
+  "main": "bin/minispec.js",
+  "bin": {
+    "minispec": "./bin/minispec.js",
+    "minispeckit": "./bin/minispec.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/cli.test.js"
+  },
+  "keywords": [
+    "ai",
+    "spec-driven-development",
+    "spec-kit",
+    "claude-code",
+    "cursor",
+    "copilot",
+    "antigravity",
+    "codex",
+    "specs",
+    "developer-tools"
+  ],
+  "author": "saiganne",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saiganne/MiniSpeckit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saiganne/MiniSpeckit/issues"
+  },
+  "homepage": "https://github.com/saiganne/MiniSpeckit#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
