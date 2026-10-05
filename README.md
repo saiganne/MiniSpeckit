@@ -12,6 +12,7 @@
 > **A lightweight, token-efficient, zero-dependency Spec-Driven Development (SDD) toolkit for AI coding agents.**  
 > Built for **Claude Code, Cursor, Copilot, Antigravity, and Codex**.
 
+[![CI](https://github.com/saiganne/MiniSpeckit/actions/workflows/ci.yml/badge.svg)](https://github.com/saiganne/MiniSpeckit/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Node.js >= 18](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](#)

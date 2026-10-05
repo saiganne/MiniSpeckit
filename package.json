@@ -35,5 +35,12 @@
   "homepage": "https://github.com/saiganne/MiniSpeckit#readme",
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "files": [
+    "bin",
+    "templates",
+    "integrations",
+    "README.md",
+    "LICENSE"
+  ]
 }
