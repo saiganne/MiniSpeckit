@@ -177,6 +177,11 @@ ${c.bold}EXAMPLES:${c.reset}
 }
 
 function cmdInit(args) {
+  if (args && (args.includes('--help') || args.includes('-h'))) {
+    console.log(`\n${c.bold}Usage:${c.reset} minispec init\n`);
+    console.log(`${c.dim}Initializes MiniSpeckit in the current project (creates specs/, default templates, and AGENTS.md).${c.reset}\n`);
+    return;
+  }
   const cwd = process.cwd();
   const specsDir = path.join(cwd, 'specs');
   const dotMinispec = path.join(cwd, '.minispec', 'templates');
@@ -236,6 +241,18 @@ function cmdInit(args) {
 }
 
 function cmdNew(args) {
+  if (args && (args.includes('--help') || args.includes('-h'))) {
+    console.log(`\n${c.bold}Usage:${c.reset} minispec new "<feature-name>" [options]\n`);
+    console.log(`${c.dim}Creates a single-file blueprint for any feature you want to build.${c.reset}\n`);
+    console.log(`${c.bold}Options:${c.reset}`);
+    console.log(`  ${c.yellow}-t, --template <name>${c.reset}    Template to use: default | api | bugfix (default: "default")`);
+    console.log(`  ${c.yellow}-h, --help${c.reset}               Show this help message\n`);
+    console.log(`${c.bold}Examples:${c.reset}`);
+    console.log(`  minispec new "Dark Mode Toggle"`);
+    console.log(`  minispec new "Payment Webhook" --template api`);
+    console.log(`  minispec new "Fix Memory Leak" --template bugfix\n`);
+    return;
+  }
   let templateName = 'default';
   const nonFlagArgs = [];
 
@@ -351,6 +368,11 @@ function cmdStatus(args) {
 }
 
 function cmdCheck(args) {
+  if (args && (args.includes('--help') || args.includes('-h'))) {
+    console.log(`\n${c.bold}Usage:${c.reset} minispec check\n`);
+    console.log(`${c.dim}Audits specifications for missing Acceptance Criteria, empty task lists, and healthy completion.${c.reset}\n`);
+    return;
+  }
   const cwd = process.cwd();
   const specsDir = path.join(cwd, 'specs');
   const specFiles = findSpecs(specsDir);
@@ -401,19 +423,25 @@ function cmdCheck(args) {
 }
 
 function cmdList(args) {
+  if (args && (args.includes('--help') || args.includes('-h'))) {
+    console.log(`\n${c.bold}Usage:${c.reset} minispec list\n`);
+    console.log(`${c.dim}Lists all feature specifications in the specs/ directory.${c.reset}\n`);
+    return;
+  }
   const cwd = process.cwd();
   const specsDir = path.join(cwd, 'specs');
   const specFiles = findSpecs(specsDir);
 
   if (specFiles.length === 0) {
-    console.log(`No specs found.`);
+    console.log(`\n${c.yellow}No specifications found in specs/${c.reset}`);
+    console.log(`Run ${c.cyan}minispec new "<feature-name>"${c.reset} to create your first spec.\n`);
     return;
   }
 
-  console.log(`\nSpecifications (${specFiles.length}):`);
+  console.log(`\n${c.bold}Specifications (${specFiles.length}):${c.reset}`);
   for (const s of specFiles) {
     const data = parseSpecFile(s.fullPath);
-    console.log(`  • [${data.id}] ${data.title} (${data.filename})`);
+    console.log(`  ${c.cyan}•${c.reset} [${c.bold}${data.id}${c.reset}] ${data.title} ${c.dim}(${data.filename} - ${data.status})${c.reset}`);
   }
   console.log('');
 }
