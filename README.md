@@ -45,7 +45,7 @@ npx github:saiganne/MiniSpeckit init
 # or: npx minispeckit init
 
 # 2. Create your first single-file blueprint
-npx minispeckit new "User Authentication"
+npx minispeckit new "<feature-name>"  # e.g. "Dark Mode" or "Search Filter"
 
 # 3. View status and progress across all specs
 npx minispeckit status
@@ -88,7 +88,8 @@ Agents read **one file**, hold the entire feature in context, and tick off tasks
 ### `minispec init`
 Scaffolds the `specs/` directory, installs default templates into `.minispec/templates/`, and creates `AGENTS.md` and agent integration rules.
 
-### `minispec new <title> [options]`
+### `minispec new <feature-name> [options]`
+Creates a blueprint for any feature you are building (e.g. "Dark Mode", "Checkout Flow").
 Creates the next sequentially numbered spec (e.g., `specs/001-user-profile.md`).
 
 **Templates available:**

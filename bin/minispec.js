@@ -148,7 +148,7 @@ ${c.bold}USAGE:${c.reset}
 
 ${c.bold}COMMANDS:${c.reset}
   ${c.cyan}init${c.reset}                      Initialize MiniSpeckit in the current project
-  ${c.cyan}new <title>${c.reset}               Create a new feature specification
+  ${c.cyan}new <feature-name>${c.reset}               Create a blueprint for any feature you want to build
   ${c.cyan}status${c.reset}                    Display status & progress bar across all specs
   ${c.cyan}check${c.reset}                     Lint specs for missing sections and task health
   ${c.cyan}list${c.reset}                      List all specs in this project
@@ -163,7 +163,7 @@ ${c.bold}EXAMPLES:${c.reset}
   $ minispec init
 
   # Create a new feature spec
-  $ minispec new "User Profile Settings"
+  $ minispec new "Dark Mode"
 
   # Create a backend API spec
   $ minispec new "Payment Webhook" --template api
@@ -232,7 +232,7 @@ function cmdInit(args) {
 
   console.log(`\n${c.bold}${c.green}MiniSpeckit initialized successfully!${c.reset}`);
   console.log(`\nNext step:`);
-  console.log(`  ${c.cyan}minispec new "your-first-feature"${c.reset}\n`);
+  console.log(`  ${c.cyan}minispec new "<feature-name>"  # e.g. minispec new "Dark Mode"${c.reset}\n`);
 }
 
 function cmdNew(args) {
@@ -250,8 +250,12 @@ function cmdNew(args) {
   const title = nonFlagArgs.join(' ').trim();
 
   if (!title) {
-    console.error(`\n${c.red}Error:${c.reset} Missing feature title.\n`);
-    console.log(`Usage: ${c.green}minispec new "feature-title" [--template <default|api|bugfix>]${c.reset}\n`);
+    console.log(`\n${c.yellow}💡 What feature are you building?${c.reset}\n`);
+    console.log(`Please provide a feature name. For example:`);
+    console.log(`  ${c.cyan}minispec new "Dark Mode"${c.reset}`);
+    console.log(`  ${c.cyan}minispec new "Search Filter"${c.reset}`);
+    console.log(`  ${c.cyan}minispec new "Payment Webhook" --template api${c.reset}\n`);
+    console.log(`Usage: ${c.bold}minispec new "<feature-name>" [--template <default|api|bugfix>]${c.reset}\n`);
     process.exit(1);
   }
 
