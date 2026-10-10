@@ -40,10 +40,11 @@ GitHub's [Spec Kit](https://github.com/github/spec-kit) popularized **Spec-Drive
 You don't need to install anything globally. Run via `npx`:
 
 ```bash
-# 1. Initialize MiniSpeckit in your project
-npx minispeckit init
+# 1. Initialize MiniSpeckit in your project (works instantly via GitHub or npm)
+npx github:saiganne/MiniSpeckit init
+# or: npx minispeckit init
 
-# 2. Create your first feature spec
+# 2. Create your first single-file blueprint
 npx minispeckit new "User Authentication"
 
 # 3. View status and progress across all specs
@@ -52,6 +53,10 @@ npx minispeckit status
 # 4. Lint and verify spec health
 npx minispeckit check
 ```
+
+<p align="center">
+  <img src="assets/minispeckit_terminal_screenshot.png" alt="MiniSpeckit Terminal Dashboard" width="100%">
+</p>
 
 ---
 

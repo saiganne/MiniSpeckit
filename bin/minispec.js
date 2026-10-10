@@ -236,17 +236,18 @@ function cmdInit(args) {
 }
 
 function cmdNew(args) {
-  let title = '';
   let templateName = 'default';
+  const nonFlagArgs = [];
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '-t' || args[i] === '--template') {
       templateName = args[i + 1] || 'default';
       i++;
-    } else if (!title && !args[i].startsWith('-')) {
-      title = args[i];
+    } else if (!args[i].startsWith('-')) {
+      nonFlagArgs.push(args[i]);
     }
   }
+  const title = nonFlagArgs.join(' ').trim();
 
   if (!title) {
     console.error(`\n${c.red}Error:${c.reset} Missing feature title.\n`);

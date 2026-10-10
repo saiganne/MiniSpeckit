@@ -4,8 +4,8 @@
   "description": "A lightweight, token-efficient, zero-dependency Spec-Driven Development (SDD) toolkit for AI coding agents.",
   "main": "bin/minispec.js",
   "bin": {
-    "minispec": "./bin/minispec.js",
-    "minispeckit": "./bin/minispec.js"
+    "minispec": "bin/minispec.js",
+    "minispeckit": "bin/minispec.js"
   },
   "type": "module",
   "scripts": {
